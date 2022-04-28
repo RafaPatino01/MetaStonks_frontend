@@ -28,7 +28,7 @@ function register(){
         hash(pass.value).then((hex) => { 
             fetch(server + '/register/' + mail.value + '/' + user.value + "/" + hex)
             // Wait 1 sec and load login
-            delay(1500).then(() => window.location.href = "login.html")
+            delay(1000).then(() => window.location.href = "login.html")
         });
     }
     else {
@@ -47,8 +47,8 @@ function login(){
              .then(data => {
                 if(data[0] == "OK"){
                     console.log("Login Correcto")
-                    setCookie("session",user.value,1)
-                    delay(1000).then(() => window.location.href = "index.html")
+                    setCookie("session_metastonks",user.value,1)
+                    delay(500).then(() => window.location.href = "index.html")
                 }
                 else {
                     alert("Login Incorrecto")
