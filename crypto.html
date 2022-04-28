@@ -7,7 +7,7 @@
     <meta name="author" content="Rafael Patino, Marco Nunez">
     <link rel="shortcut icon" href="#">
 
-    <title>MetaStonks</title>
+    <title>MetaStonks: Crypto</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 
@@ -22,35 +22,37 @@
         -moz-user-select: none;
         user-select: none;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
     </style>
 
     
   <!-- Custom styles for this template -->
-  <link href="css/main.css" rel="stylesheet">
+  <link href="css/crypto.css" rel="stylesheet">
+
   </head>
-  <body class="d-flex h-100 text-center text-white bg-dark" onload="home()">
+  <body class="d-flex h-100 text-center text-white" onload="home()">
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0" id="top-title"></h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-        <a style="cursor: pointer;" class="nav-link" onclick="link('crypto')">Crypto</a>
+        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+        <a style="cursor: pointer;" class="nav-link active" onclick="link('crypto')">Crypto</a>
         <a style="cursor: pointer;" class="nav-link" onclick="link('nft')">NFTs</a>
       </nav>
     </div>
   </header>
 
-  <main class="px-3">
-    <h1 class="grande">MetaStonks🚀</h1>
+  <h1 class="grande">₵rypto</h1>
+  <div class="w-100 tokens">
+    <p class="marquee">
+      <span id="loop"></span>
+    </p>
+  </div>
+ 
+  <main class="px-3 pt-5">
     <p class="lead">Información <i>condensada</i> sobre el mundo del web 3.0</p>
+
     <p id="ingresar" class="lead">
       <a href="login.html" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Ingresar</a>
     </p>
@@ -64,6 +66,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script async src="js/main.js" crossorigin="anonymous"></script>
   <script async src="js/session.js" crossorigin="anonymous"></script>
+  <script async src="js/crypto.js" crossorigin="anonymous"></script>
 
   </body>
 </html>
