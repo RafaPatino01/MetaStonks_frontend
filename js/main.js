@@ -8,6 +8,3 @@ else {
   server = "http://146.190.1.241"
 }
 
-fetch(server + '/token_names')
-  .then(response => response.json())
-  .then(data => console.log(data));
