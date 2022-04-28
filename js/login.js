@@ -12,6 +12,13 @@ function delay(time) {
     return new Promise(resolve => setTimeout(resolve, time));
 }
 
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function register(){
     const user = document.getElementById("user")
     const pass = document.getElementById("pass")
@@ -20,9 +27,9 @@ function register(){
     if(user.value != "" && pass.value != "" && mail.value != ""){
         hash(pass.value).then((hex) => { 
             fetch(server + '/register/' + mail.value + '/' + user.value + "/" + hex)
+            // Wait 1 sec and load login
+            delay(1500).then(() => window.location.href = "login.html")
         });
-        // Wait 1 sec and load login
-        delay(1000).then(() => window.location.href = "login.html")
     }
     else {
         alert("Faltan datos")
@@ -37,10 +44,18 @@ function login(){
         hash(pass.value).then((hex) => { 
             fetch(server + '/login/' + user.value + '/' + hex)
              .then(response => response.json())
-             .then(data => console.log(data));
-        });
-
-        //delay(1000).then(() => window.location.href = "login.html")
+             .then(data => {
+                if(data[0] == "OK"){
+                    console.log("Login Correcto")
+                    setCookie("session",user.value,1)
+                    delay(1000).then(() => window.location.href = "index.html")
+                }
+                else {
+                    alert("Login Incorrecto")
+                }
+                
+            }); 
+        })
     }
     else {
         alert("Faltan datos")
