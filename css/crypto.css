@@ -79,6 +79,16 @@ html, body {
     font-size: 3em;
     color: rgb(79, 79, 79);
 }
+
+.good {
+  color: rgb(70, 190, 70);
+}
+.normal {
+  color: rgb(190, 168, 70);
+}
+.bad {
+  color: rgb(190, 70, 70);
+}
   
 @keyframes marquee {
     0% {

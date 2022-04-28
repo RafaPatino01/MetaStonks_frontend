@@ -1,4 +1,4 @@
-let mode = 0 // Mode 0 es desarrollo local
+let mode = 1 // Mode 0 es desarrollo local
 let server = ""
 
 if(mode == 0){
