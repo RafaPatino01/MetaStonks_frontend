@@ -1,5 +1,10 @@
+body {
+  background-color: black;
+  color: white;
+}
+
 #sidebar{
-    border-right: 1px solid rgb(235, 235, 235);
+    border-right: 1px solid rgb(55, 55, 55);
   }
 
 #company-name{
@@ -8,17 +13,17 @@
 
 .nft-generals{
   border-radius: 5px;
-  border: 1px solid rgb(192, 192, 192);
+  border: 1px solid rgb(46, 46, 46);
 }
 
 .nft-generals-title{
   font-weight: bold;
   font-size: 14px;
-  color: rgb(192, 192, 192);
+  color: rgb(42, 42, 42);
 }
 
 .nft-rarity-title{
   font-weight: bold;
   font-size: 24px;
-  color: rgb(192, 192, 192);
+  color: rgb(43, 43, 43);
 }
